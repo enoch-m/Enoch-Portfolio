@@ -1,0 +1,556 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background-color: #e1c67e;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #75adab;
+    padding: 30px;
+    padding-left: 4%;
+}
+
+header h1 {
+    margin: 0;
+    color: rgb(54, 53, 53);
+    font-size: 24px;
+}
+
+h1 a {
+  text-decoration: none;
+  color: inherit; /* inherits color from h1 */
+}
+
+nav {
+    position: absolute;
+    top: 4.5%;
+    right: 20px;
+}
+
+nav a {
+    color: rgb(54, 53, 53);
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    padding-right: 30px;
+}
+
+nav a.active {
+    text-decoration: underline; /* Underline only the active page */
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger icon */
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+/* Mobile nav hidden by default */
+@media (max-width: 600px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    position: static;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  /* Show hamburger icon */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Show nav when checkbox is checked */
+  #menu-toggle:checked + .menu-icon + nav {
+    display: flex;
+  }
+}
+
+footer {
+    background-color: #75adab;
+    color: rgb(54, 53, 53);
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    padding-bottom: 3%;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: rgb(54, 53, 53);
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.contact-info {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Generic hover effect for all clickable elements */
+a:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+
+
+/* Homepage Styles */
+#brush-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.homepage-container {
+    display: flex;
+    align-items: center;  /* vertically centers text and image */
+    gap: 40px;            /* increased gap for more spacing */
+    padding: 40px;        /* add some padding around container */
+}
+
+.text-content {
+    max-width: 50%;
+}
+
+.text-content h1 {
+    font-size: 60px;  /* bigger heading */
+    padding-left: 20%;
+}
+
+.text-content p {
+    font-size: 24px;  /* slightly bigger paragraph */
+    line-height: 1.8;
+    text-align: justify;
+    padding-left: 20%;
+}
+
+.text-content button {
+    background-color: #333;
+    color: #75adab;
+    border: none;
+    padding: 14px 28px;  /* bigger button */
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-left: 20%;
+}
+
+.image-content img {
+    width: 405px;       /* larger image */
+    border-radius: 10px;
+}
+
+.image-content {
+    margin-left: 15%;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+    .text-content h1, .text-content p {
+        padding-left:0;
+        text-align: center;
+    }
+
+    .homepage-container {
+        flex-direction: column;
+        align-items: center; /* center align text */
+        gap: 24px;
+        padding: 20px;
+    }
+
+    .text-content {
+        max-width: 100%;
+    }
+
+    .text-content h1 {
+        font-size: 36px;
+    }
+
+    .text-content p {
+        font-size: 18px;
+    }
+
+    .image-content img {
+        width: 100%;
+        max-width: 300px; /* limit image size on small screens */
+        height: auto;
+    }
+
+    .image-content {
+        margin-left: 0;
+        margin-right: 0;
+        margin: 0 auto;
+    }
+
+    .text-content button {
+        display: block;
+        margin: 20px auto 0 auto; /* top margin, auto horizontal centering */
+    }
+
+}
+
+
+
+/* About Me Page Styles */
+
+/* Flex row layout for sections */
+.section {
+    margin-bottom: 120px;              /* increased spacing between each row */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;                        /* consistent space between text and image */
+}
+
+/* Alternate layout for even sections */
+.section {
+    padding-bottom: 15%;
+}
+
+.section:nth-child(even) {
+    flex-direction: row-reverse; /* allows alternating text and image pattern*/
+}
+
+.section-content {
+    max-width: 50%;
+    padding-left: 5%;                 /* adds consistent padding to match image spacing */
+}
+
+.section-content h2 {
+    font-size: 60px;                  /* larger heading font */
+    color: #335;
+    margin-bottom: 20px;
+}
+
+.section-content p {
+    font-size: 24px;                  /* larger paragraph font */
+    line-height: 1.8;
+    text-align: justify;              /* justify paragraph */
+}
+
+.section-image img {
+    width: 350px;                     /* larger image */
+    border-radius: 10px;
+}
+
+.section-image2 img {
+    width: 100%;              /* scale with container */
+    max-width: 500px;         /* cap the size */
+    border-radius: 10px;
+    margin-left: 15%;
+}
+
+.section-image3 img {
+    width: 500px;                     /* larger image */
+    border-radius: 10px;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 600px) {
+    .section, .section:nth-child(even) {
+        flex-direction: column;       /* stack image + text vertically */
+        align-items: center;          /* center items */
+        text-align: center;           /* center headings */
+    }
+
+    .section-content {
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    .section-content h2 {
+        font-size: 40px;              /* scale down for small screens */
+    }
+
+    .section-content p {
+        font-size: 18px;
+        text-align: justify;          /* keep justified text on mobile */
+    }
+
+    .section-image img {
+        width: 100%;
+        max-width: 300px;             /* image scales nicely */
+        height: auto;
+    }
+
+    .section-image2 img, .section-image3 img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block;
+    }
+
+}
+
+
+
+/* Projects Page Styles */
+.project-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* good for responsiveness */
+    padding-bottom: 55px;
+}
+
+.project {
+    background-color: #FFE4B5;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.project img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* crop to fit nicely */
+    border-radius: 5px;
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.projects-container {
+    padding-bottom: 100px;
+}
+
+
+/* Header styling */
+.container h2 {
+    font-size: 50px;
+    text-align: left;
+    margin-bottom: 30px;
+    color: #335;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 600px) {
+    .project-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 100%;
+        max-width: 400px; /* keeps cards readable on small screens */
+    }
+
+    .project-title {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 40px; /* optional scaling for smaller screens */
+    }
+}
+
+/* Link styles */
+.project a {
+    color: inherit;             /* Inherit color from parent (keeps it consistent) */
+    text-decoration: none;      /* Removes underline */
+}
+
+
+
+/* Fitness and Lifestyle HTML/CSS Project Styles */
+.F\&L-container p {
+    font-size: 24px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.F\&L-container {
+    padding: 40px;
+}
+
+
+
+/* Figma Project Styles */
+.container {
+    padding: 40px;
+}
+
+.container p {
+    font-size: 24px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.figma-iframe {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.figma-iframe iframe {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.highlight-link {
+    color: #75adab;
+    text-decoration: underline;
+}
+
+
+
+/* SQL Project Styles */
+
+/* Container for the two-column layout */
+.sql-project {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+/* Left side: image + download link */
+.sql-left {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sql-left img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.sql-link {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.sql-link a {
+    color: #223355;
+    text-decoration: underline;
+}
+
+/* Right side: text content */
+.sql-right {
+    flex: 1;
+    min-width: 300px;
+    font-size: 24px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.sql-right ul {
+    padding-left: 20px;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .sql-project {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sql-left,
+    .sql-right {
+        width: 100%;
+        text-align: justify;
+    }
+
+    .sql-link {
+        margin-bottom: 30px; /* spacing between link and paragraph on mobile */
+    }
+}
+
+/* Project Navigation */
+.project-navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* allow stacking when needed */
+    margin: 60px 0 40px 0;
+}
+
+/* Make the nav links take up 50% width on desktop */
+.project-navigation2,
+.project-navigation3 {
+    flex: 1 1 45%;
+}
+
+/* Stack vertically on smaller screens */
+@media (max-width: 768px) {
+    .project-navigation2,
+    .project-navigation3 {
+        flex: 1 1 100%;
+        text-align: center; /* optional: center the text on mobile */
+        margin-bottom: 20px;
+    }
+}
+
+.project-navigation1, .project-navigation3 {
+    text-align: right;
+    margin: 60px 0 40px 0;  /* Remove auto centering */
+    font-size: 30px;
+    padding-right: 40px;    /* Optional: add some right padding for spacing */
+}
+
+.project-navigation2, .project-navigation4 {
+    text-align: left;
+    margin: 60px 0 40px 0;  /* Remove auto centering */
+    font-size: 30px;
+    padding-right: 40px;    /* Optional: add some right padding for spacing */
+}
+
+.project-navigation1 a, .project-navigation2 a, .project-navigation3 a, .project-navigation4 a {
+    color: #223355;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.project-navigation1, .project-navigation2, .project-navigation3, .project-navigation4 a:hover {
+    color: #0077cc;
+    transform: translateX(5px);
+}
