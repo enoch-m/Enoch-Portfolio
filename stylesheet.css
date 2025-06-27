@@ -60,7 +60,7 @@ nav a.active {
 }
 
 /* Mobile nav hidden by default */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   nav {
     display: none;
     flex-direction: column;
@@ -92,6 +92,12 @@ footer {
     text-align: center;
     margin-top: auto;
     padding-bottom: 3%;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding-bottom: 60px;
+    }
 }
 
 .social-links a {
@@ -140,7 +146,7 @@ input[type="submit"]:hover {
 }
 
 .text-content h1 {
-    font-size: 60px;  /* bigger heading */
+    font-size: 60px;
     padding-left: 20%;
 }
 
@@ -172,7 +178,7 @@ input[type="submit"]:hover {
 }
 
 /* Responsive for mobile */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .text-content h1, .text-content p {
         padding-left:0;
         text-align: center;
@@ -221,105 +227,108 @@ input[type="submit"]:hover {
 /* About Me Page Styles */
 
 /* Flex row layout for sections */
+.container {
+    padding-top: 5%;
+}
 .section {
-    margin-bottom: 120px;              /* increased spacing between each row */
+    margin-bottom: 120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;                        /* consistent space between text and image */
-}
-
-/* Alternate layout for even sections */
-.section {
-    padding-bottom: 15%;
+    gap: 40px;
+    padding: 0 5%; /* 5% padding on left and right */
 }
 
 .section:nth-child(even) {
-    flex-direction: row-reverse; /* allows alternating text and image pattern*/
+    flex-direction: row-reverse;
 }
 
 .section-content {
     max-width: 50%;
-    padding-left: 5%;                 /* adds consistent padding to match image spacing */
+    margin-bottom: 80px;
 }
 
-.section-content h2 {
-    font-size: 60px;                  /* larger heading font */
-    color: rgb(54, 53, 53);
-    margin-bottom: 20px;
+.section-content h1 {
+    font-size: 50px;
 }
 
 .section-content p {
-    font-size: 24px;                  /* larger paragraph font */
+    font-size: 25px;
     line-height: 1.8;
-    text-align: justify;              /* justify paragraph */
+    text-align: justify;
+}
+
+.section-content h2 {
+    margin-bottom: 20px;
 }
 
 .section-image img {
-    width: 350px;                     /* larger image */
+    width: 350px;
     border-radius: 10px;
 }
 
 .section-image2 img {
-    width: 100%;              /* scale with container */
-    max-width: 500px;         /* cap the size */
+    width: 100%;
+    max-width: 500px;
     border-radius: 10px;
     margin-left: 15%;
 }
 
 .section-image3 img {
-    width: 500px;                     /* larger image */
+    width: 500px;
     border-radius: 10px;
 }
 
 /* Responsive styles for mobile */
-@media (max-width: 600px) {
-    .section, .section:nth-child(even) {
-        flex-direction: column;       /* stack image + text vertically */
-        align-items: center;          /* center items */
-        text-align: center;           /* center headings */
+@media (max-width: 768px) {
+    .section,
+    .section:nth-child(even) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 5%; /* Keep 5% padding on mobile too */
     }
 
     .section-content {
         max-width: 100%;
-        padding-left: 0;
     }
 
-    .section-content h2 {
-        font-size: 40px;              /* scale down for small screens */
+    .section-content h1 {
+        font-size: 36px;
     }
 
     .section-content p {
         font-size: 18px;
-        text-align: justify;          /* keep justified text on mobile */
+        line-height: 1.8;
+        text-align: justify;
     }
 
-    .section-image img {
-        width: 100%;
-        max-width: 300px;             /* image scales nicely */
-        height: auto;
-    }
-
-    .section-image2 img, .section-image3 img {
+    .section-image2 img,
+    .section-image3 img {
         width: 100%;
         max-width: 600px;
         height: auto;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        margin-left: auto;
+        margin-right: auto;
         display: block;
     }
-
 }
 
 
 
+
 /* Projects Page Styles */
+.projects-container {
+    padding: 0 5%; /* 5% padding on left and right */
+    padding-bottom: 90px;
+}
+
 .project-gallery {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     margin-top: 20px;
-    flex-wrap: wrap; /* good for responsiveness */
+    flex-wrap: wrap;
     padding-bottom: 55px;
 }
 
@@ -332,10 +341,20 @@ input[type="submit"]:hover {
     flex: 1;
 }
 
+.projects-container h1 {
+    font-size: 50px;
+}
+
+.projects-container p {
+    font-size: 25px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
 .project img {
     width: 100%;
     height: 300px;
-    object-fit: cover; /* crop to fit nicely */
+    object-fit: cover;
     border-radius: 5px;
 }
 
@@ -345,11 +364,12 @@ input[type="submit"]:hover {
     margin-top: 10px;
 }
 
-.projects-container {
-    padding-bottom: 100px;
-}
-
+/* Responsive styles for mobile */
 @media (max-width: 768px) {
+  .projects-container {
+    padding: 0 5%; /* Keep 5% padding on mobile too */
+  }
+
   .project-gallery {
     flex-direction: column;
     align-items: center;
@@ -363,11 +383,18 @@ input[type="submit"]:hover {
     width: 100%;
     max-width: 500px;
     margin: 0 auto 20px;
-    flex: unset; /* override flex: 1 */
+    flex: unset;
     box-sizing: border-box;
   }
-}
 
+  .projects-container h1 {
+    font-size: 36px;
+  }
+
+  .projects-container p {
+    font-size: 18px;
+  }
+}
 
 
 
@@ -380,7 +407,7 @@ input[type="submit"]:hover {
 }
 
 /* Mobile Responsive Styles */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .project-gallery {
         flex-direction: column;
         align-items: center;
@@ -409,29 +436,40 @@ input[type="submit"]:hover {
 
 
 /* Fitness and Lifestyle HTML/CSS Project Styles */
-.F\&L-container h2 {
+.F-L-container h2 {
     font-size: 50px;
     color: #335;
 }
 
-.F\&L-container p {
+.F-L-container p {
     font-size: 24px;
     line-height: 1.8;
     text-align: justify;
 }
 
-.F\&L-container {
+.F-L-container {
     padding: 40px;
 }
+
+@media (max-width: 768px) {
+  .F-L-container h1 {
+    font-size: 36px !important;
+  }
+
+  .F-L-container p {
+    font-size: 18px !important;
+  }
+}
+
 
 
 
 /* Figma Project Styles */
-.container {
+.container-figma {
     padding: 40px;
 }
 
-.container p {
+.container-figma p {
     font-size: 24px;
     line-height: 1.8;
     text-align: justify;
@@ -457,6 +495,16 @@ input[type="submit"]:hover {
     text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+  .container-figma h1 {
+    font-size: 36px !important;
+  }
+
+  .container-figma p {
+    font-size: 18px !important;
+  }
+}
+
 
 
 /* SQL Project Styles */
@@ -469,6 +517,10 @@ input[type="submit"]:hover {
     align-items: flex-start;
     flex-wrap: wrap;
     padding: 40px;
+}
+
+.container-sql {
+    padding: 5%;
 }
 
 /* Left side: image + download link */
@@ -532,6 +584,14 @@ input[type="submit"]:hover {
 
   .sql-link {
     margin-bottom: 30px;    /* keep spacing between link and paragraph */
+  }
+
+  .container-sql h1 {
+    font-size: 36px !important;
+  }
+
+  .container-sql p {
+    font-size: 18px !important;
   }
 }
 
