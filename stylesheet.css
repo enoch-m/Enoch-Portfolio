@@ -83,14 +83,6 @@ nav a.active {
   #menu-toggle:checked + .menu-icon + nav {
     display: flex;
   }
-
-  h1, h2 {
-    font-size: medium;
-  }
-
-  p {
-    font-size: 18px;
-  }
 }
 
 footer {
@@ -253,7 +245,7 @@ input[type="submit"]:hover {
 
 .section-content h2 {
     font-size: 60px;                  /* larger heading font */
-    color: #335;
+    color: rgb(54, 53, 53);
     margin-bottom: 20px;
 }
 
@@ -356,6 +348,28 @@ input[type="submit"]:hover {
 .projects-container {
     padding-bottom: 100px;
 }
+
+@media (max-width: 600px) {
+  .project-gallery {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 10px 55px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .project {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    flex: unset; /* override flex: 1 */
+    box-sizing: border-box;
+  }
+}
+
+
 
 
 /* Header styling */
