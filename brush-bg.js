@@ -11,7 +11,17 @@ window.onload = function () {
     canvas.height = window.innerHeight;
   }
 
-  window.addEventListener('resize', resizeCanvas);
+  // Debounced resize handler to avoid too many redraws on mobile
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      resizeCanvas();
+      drawBrushStrokes();
+    }, 150);
+  });
+
+  // Initial setup
   resizeCanvas();
 
   // Set background color

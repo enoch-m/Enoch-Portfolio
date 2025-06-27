@@ -83,6 +83,14 @@ nav a.active {
   #menu-toggle:checked + .menu-icon + nav {
     display: flex;
   }
+
+  h1, h2 {
+    font-size: medium;
+  }
+
+  p {
+    font-size: 18px;
+  }
 }
 
 footer {
@@ -104,6 +112,7 @@ footer {
 .contact-info {
     margin-top: 10px;
     font-size: 16px;
+    text-decoration: none;
 }
 
 /* Generic hover effect for all clickable elements */
@@ -387,6 +396,11 @@ input[type="submit"]:hover {
 
 
 /* Fitness and Lifestyle HTML/CSS Project Styles */
+.F\&L-container h2 {
+    font-size: 50px;
+    color: #335;
+}
+
 .F\&L-container p {
     font-size: 24px;
     line-height: 1.8;
@@ -485,23 +499,27 @@ input[type="submit"]:hover {
     margin-bottom: 24px;
 }
 
-/* Responsive layout */
 @media (max-width: 768px) {
-    .sql-project {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  .sql-project {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10px;    /* reduced horizontal padding */
+    padding-right: 10px;
+    max-width: 600px;      /* limit max width for better centering */
+    margin: 0 auto;        /* center container horizontally */
+  }
 
-    .sql-left,
-    .sql-right {
-        width: 100%;
-        text-align: justify;
-    }
+  .sql-left,
+  .sql-right {
+    width: 100%;
+    max-width: 600px;       /* keep content from stretching too wide */
+    margin: 0 auto;         /* center each block */
+    text-align: center;     /* center text and image */
+  }
 
-    .sql-link {
-        margin-bottom: 30px; /* spacing between link and paragraph on mobile */
-    }
+  .sql-link {
+    margin-bottom: 30px;    /* keep spacing between link and paragraph */
+  }
 }
 
 /* Project Navigation */
