@@ -15,7 +15,7 @@ header {
     padding-left: 4%;
     position: sticky;
     top: 0;
-    z-index: 1000; /* ensures it stays above other elements */
+    z-index: 1000; /* Makes sure header is above all other elements */
 }
 
 header h1 {
@@ -33,6 +33,7 @@ nav {
     position: absolute;
     top: 4.5%;
     right: 20px;
+    padding-top: 30px;
 }
 
 nav a {
